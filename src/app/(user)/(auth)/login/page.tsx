@@ -11,21 +11,27 @@ export default function Login() {
             className='hidden text-center text-5xl font-bold text-white lg:block'
             //   style={quickSand.style}
           >
-            Your Portal <br />
-            to <br /> Mangrove Knowledge
+            Your Portal to get <br /> Recommendation Mountain
           </h1>
         </div>
       </div>
-      <div className='h-screen bg-mangrove bg-cover bg-center lg:w-1/2 lg:bg-none'>
-        <div className='flex h-full w-full items-center justify-center bg-black bg-opacity-80 px-8 lg:bg-opacity-0 lg:bg-none lg:px-0'>
+      <div className='h-screen bg-home bg-cover bg-center lg:w-1/2 lg:bg-none'>
+        <div className='flex h-full w-full items-center justify-center bg-gradient-to-t from-black px-8 lg:bg-opacity-0 lg:bg-none lg:px-0'>
           <div className=''>
             <div className='text-center'>
-              <Image src='/img/logo-dark.png' width={200} height={200} alt='logo' className='mx-auto w-36' />
+              <Image
+                src='/img/logo-dark.png'
+                width={200}
+                height={200}
+                alt='logo'
+                className='hidden lg:block mx-auto w-36'
+              />
+              <Image src='/img/logo.png' width={200} height={200} alt='logo' className='lg:hidden mx-auto w-36' />
               <h1
                 className='text-3xl font-semibold text-white lg:text-black'
                 //   style={passeroOne.style}
               >
-                <span className='text-black'>Adven</span>
+                <span className='text-white lg:text-black'>Adven</span>
                 <span className='text-[#ECD400]'>Tour</span>
               </h1>
             </div>
@@ -41,7 +47,7 @@ export default function Login() {
                   //   value={formLogin.username}
                   //   onChange={handleChange}
                   placeholder='Your username'
-                  className='mt-2 w-full rounded-lg border border-gray-400 px-4 py-2 text-sm focus:border-yellow focus:outline-none focus:ring-1 md:text-base'
+                  className='mt-2 w-full rounded-lg border border-gray-400 px-4 py-2 text-sm focus:border-prime-yellow focus:outline-none focus:ring-0 md:text-base'
                 />
               </div>
               <div className='my-5'>
@@ -52,10 +58,10 @@ export default function Login() {
                   type='password'
                   id='password'
                   name='password'
-                  //   value={formLogin.password}
-                  //   onChange={handleChange}
+                  // value={formLogin.password}
+                  // onChange={handleChange}
                   placeholder='Your password'
-                  className='mt-2 w-full rounded-lg border border-gray-400 px-4 py-2 text-sm focus:border-yellow focus:outline-none focus:ring-1 md:text-base'
+                  className='mt-2 w-full rounded-lg border border-gray-400 px-4 py-2 text-sm focus:border-prime-yellow focus:outline-none focus:ring-0 md:text-base'
                 />
               </div>
               <div className='my-5'>

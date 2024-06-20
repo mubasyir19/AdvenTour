@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 export default function Navbar() {
   return (
-    <nav className='absolute left-1/2 top-3 w-11/12 -translate-x-1/2 transform rounded-xl bg-black px-4 py-2 drop-shadow-xl backdrop-blur-md lg:w-1/2'>
+    <nav className='fixed z-10 left-1/2 top-3 w-11/12 -translate-x-1/2 transform rounded-xl bg-black bg-opacity-50 px-4 py-2 drop-shadow-xl backdrop-blur-md lg:w-1/2'>
       <div className='flex justify-around text-white' style={poppins.style}>
         <Link href='/' className='my-auto'>
           Home
