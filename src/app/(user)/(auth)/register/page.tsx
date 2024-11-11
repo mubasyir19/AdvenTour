@@ -8,18 +8,24 @@ const quickSand = Quicksand({
   weight: ['400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 const passeroOne = Passero_One({
   weight: ['400'],
   style: ['normal'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 export default function Register() {

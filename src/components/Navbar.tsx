@@ -1,6 +1,9 @@
+'use client';
+
 import { Poppins } from 'next/font/google';
 import Link from 'next/link';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useState } from 'react';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
@@ -9,16 +12,18 @@ const poppins = Poppins({
 });
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className='fixed z-10 left-1/2 top-3 w-11/12 -translate-x-1/2 transform rounded-xl bg-black bg-opacity-50 px-4 py-2 drop-shadow-xl backdrop-blur-md lg:w-1/2'>
+    <nav className='fixed z-10 left-1/2 top-3 w-11/12 -translate-x-1/2 transform rounded-full bg-black bg-opacity-50 px-4 py-2 drop-shadow-xl backdrop-blur-md lg:w-1/2'>
       <div className='flex justify-around text-white' style={poppins.style}>
-        <Link href='/' className='my-auto'>
+        <Link href='/' className={`my-auto ${pathname === '/' ? 'text-yellow-300' : 'text-white'}`}>
           Home
         </Link>
-        <Link href='/mountains' className='my-auto'>
+        <Link href='/mountains' className={`my-auto ${pathname === '/mountains' ? 'text-yellow-300' : 'text-white'}`}>
           Mountains
         </Link>
-        <Link href='/about-us' className='my-auto'>
+        <Link href='/about-us' className={`my-auto ${pathname === '/about-us' ? 'text-yellow-300' : 'text-white'}`}>
           About Us
         </Link>
         <Link href='/login' className='rounded-lg bg-yellow-300 text-black px-4 py-2'>

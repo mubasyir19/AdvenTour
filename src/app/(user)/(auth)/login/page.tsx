@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Login() {
   return (
-    <section className='bg-gray-100 lg:flex'>
+    <section className='bg-white lg:flex'>
       <div className='bg-home bg-cover bg-center lg:h-screen lg:w-1/2'>
         <div className='flex h-full w-full items-center justify-center bg-black bg-opacity-60'>
           <h1

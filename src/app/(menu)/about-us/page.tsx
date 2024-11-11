@@ -10,12 +10,16 @@ const quickSand = Quicksand({
   weight: ['400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 export default function Profile() {
@@ -24,7 +28,7 @@ export default function Profile() {
   return (
     <>
       <Navbar />
-      <section className='h-80 w-full bg-home bg-cover bg-center' style={poppins.style}>
+      <section className='h-80 w-full bg-home bg-cover bg-fixed bg-bottom' style={poppins.style}>
         <div className='flex h-full w-full items-center justify-center bg-black bg-opacity-50'>
           <div className=''>
             {/* <div className='mx-auto w-fit rounded-full bg-white p-4'>
@@ -51,9 +55,15 @@ export default function Profile() {
         </div>
       </section>
       <section className='mx-auto mt-10' style={poppins.style}>
-        <div className='w-3/4 flex gap-x-8 mx-auto'>
+        <div className='w-3/4 flex gap-x-8 mx-auto items-center'>
           <div className='w-1/2'>
-            <Image src='/img/background.jpg' width={500} height={500} alt='photo' className='h-fit w-full' />
+            <Image
+              src='/img/background.jpg'
+              width={500}
+              height={500}
+              alt='photo'
+              className='xl:h-80 object-center object-cover h-full w-full'
+            />
           </div>
           <p className='text-justify w-1/2'>
             <span className='text-3xl text-prime-yellow font-semibold'>Hi</span>, Ventourians, welcome to AdvenTour.
@@ -68,7 +78,7 @@ export default function Profile() {
             your adventure now with Adventour!
           </p>
         </div>
-        <div className='bg-home bg-center bg-cover my-20'>
+        <div className='bg-home bg-bottom bg-fixed bg-cover my-20'>
           <div className='bg-black bg-opacity-80 py-20 flex justify-center w-full h-full text-white'>
             <div className='w-3/4'>
               <h1 className='text-3xl font-bold'>
@@ -90,46 +100,50 @@ export default function Profile() {
             Why <span className='text-prime-yellow'>AdvenTour</span> ?
           </h1>
           <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 mt-8'>
-            <div className='card-why flex gap-x-4'>
+            <div className='card-why flex gap-x-4 bg-slate-50 shadow-xl px-4 py-8 rounded-xl'>
               <div className='bg-prime-yellow flex justify-center text-center items-center rounded-full w-10 h-10 p-4'>
                 <p className='text-white text-xl font-semibold'>01</p>
               </div>
               <div className=''>
                 <h3 className='text-2xl font-bold'>Personalization experiences</h3>
-                <p>
+                <p className='mt-2'>
                   AdvenTour Apps provides recommendations based on individual preference, hiking experience, and desired
                   trail characteristis
                 </p>
               </div>
             </div>
-            <div className='card-why flex gap-x-4'>
+            <div className='card-why flex gap-x-4 bg-slate-50 shadow-xl px-4 py-8 rounded-xl'>
               <div className='bg-prime-yellow flex justify-center text-center items-center rounded-full w-10 h-10 p-4'>
                 <p className='text-white text-xl font-semibold'>02</p>
               </div>
               <div className=''>
                 <h3 className='text-2xl font-bold'>Enhanced safety and preparedness</h3>
-                <p>
+                <p className='mt-2'>
                   AdvenTour Apps addresses this by providing vital safety information, such as trail difficulty levels,
                   terrain conditions, and safety precautions
                 </p>
               </div>
             </div>
-            <div className='card-why flex gap-x-4'>
+            <div className='card-why flex gap-x-4 bg-slate-50 shadow-xl px-4 py-8 rounded-xl'>
               <div className='bg-prime-yellow flex justify-center text-center items-center rounded-full w-10 h-10 p-4'>
                 <p className='text-white text-xl font-semibold'>03</p>
               </div>
               <div className=''>
                 <h3 className='text-2xl font-bold'>Time and effort efficiency</h3>
-                <p>AdvenTour Apps streamlines this process by consolidating relevant information in one platform</p>
+                <p className='mt-2'>
+                  AdvenTour Apps streamlines this process by consolidating relevant information in one platform
+                </p>
               </div>
             </div>
-            <div className='card-why flex gap-x-4'>
+            <div className='card-why flex gap-x-4 bg-slate-50 shadow-xl px-4 py-8 rounded-xl'>
               <div className='bg-prime-yellow flex justify-center text-center items-center rounded-full w-10 h-10 p-4'>
                 <p className='text-white text-xl font-semibold'>04</p>
               </div>
               <div className=''>
                 <h3 className='text-2xl font-bold'>Exploration of new and unique destinations</h3>
-                <p>AdvenTour Apps caters to this desire by showcasing lesser-known trails and hidden gems.</p>
+                <p className='mt-2'>
+                  AdvenTour Apps caters to this desire by showcasing lesser-known trails and hidden gems.
+                </p>
               </div>
             </div>
           </div>
@@ -141,7 +155,7 @@ export default function Profile() {
           <div className='mt-10'>
             <div className='card-person text-center'>
               {/* <Image src="" width={} height={} alt='' /> */}
-              <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div>
+              <div className='h-40 w-40 xl:h-52 xl:w-52 bg-gray-400 rounded-full mx-auto'></div>
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Nuri Fathriya Mardlatillah</h4>
                 <p className='mt-3'>State University of Surabaya</p>
@@ -149,10 +163,10 @@ export default function Profile() {
               </div>
             </div>
           </div>
-          <div className='flex justify-center gap-x-32 mx-auto mt-10'>
+          <div className='flex justify-center gap-x-20 mx-auto mt-10'>
             <div className='card-person text-center'>
               {/* <Image src="" width={} height={} alt='' /> */}
-              <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div>
+              <div className='h-40 w-40 xl:h-52 xl:w-52 bg-gray-400 rounded-full mx-auto'></div>
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Farhan Reynaldi Valerian</h4>
                 <p className='mt-3'>Trunojoyo University</p>
@@ -161,7 +175,7 @@ export default function Profile() {
             </div>
             <div className='card-person text-center'>
               {/* <Image src="" width={} height={} alt='' /> */}
-              <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div>
+              <div className='h-40 w-40 xl:h-52 xl:w-52 bg-gray-400 rounded-full mx-auto'></div>
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Mohammad Luqi Wiharto</h4>
                 <p className='mt-3'>Sultan Agung Islamic University</p>
@@ -169,7 +183,13 @@ export default function Profile() {
               </div>
             </div>
             <div className='card-person text-center'>
-              <Image src='/img/mahdy.png' width={200} height={200} alt='photo' className='h-52 w-52 rounded-full' />
+              <Image
+                src='/img/mahdy.png'
+                width={200}
+                height={200}
+                alt='photo'
+                className='h-40 w-40 xl:h-52 xl:w-52 rounded-full'
+              />
               {/* <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div> */}
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Mahdy Mubasyir</h4>
@@ -180,7 +200,13 @@ export default function Profile() {
           </div>
           <div className='flex justify-center gap-x-32 mx-auto mt-10'>
             <div className='card-person text-center'>
-              <Image src='/img/erlan.jpg' width={200} height={200} alt='photo' className='h-52 w-52 rounded-full' />
+              <Image
+                src='/img/erlan.jpg'
+                width={200}
+                height={200}
+                alt='photo'
+                className='h-40 w-40 xl:h-52 xl:w-52 rounded-full'
+              />
               {/* <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div> */}
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Erlan Herlangga</h4>
@@ -190,7 +216,7 @@ export default function Profile() {
             </div>
             <div className='card-person text-center'>
               {/* <Image src="" width={} height={} alt='' /> */}
-              <div className='h-52 w-52 bg-gray-400 rounded-full mx-auto'></div>
+              <div className='h-40 w-40 xl:h-52 xl:w-52 bg-gray-400 rounded-full mx-auto'></div>
               <div className='text-center mt-3'>
                 <h4 className='text-xl'>Dhea Ulhaq Haryani Putri</h4>
                 <p className='mt-3'>Jendral Soedirman University</p>
